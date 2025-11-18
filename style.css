@@ -1,0 +1,162 @@
+/* corpo do site */
+body{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #ccc;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+/* listas e links */
+li,a{
+    font-size: 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+/* parte superior do site */
+header{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+    background-color: #770fff;
+    opacity: 60%;
+    justify-content: space-between;
+}
+
+/* logo */
+.logo img{
+    width: 60px;
+    height: 60px;
+}
+
+/* barra de navegação */
+.nav-links{
+    list-style: none;
+}
+.nav-links li{
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav-links li a:hover{
+    color: #aaa;
+}
+@media (max-width: 800px){
+    li,a{
+    font-size: 15px;
+}
+    .logo img{
+    width: 30px;
+    height: 30px;
+    
+}
+}
+
+.menu-h{
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    z-index: 4;
+}
+#menu{
+    display: none;
+}
+.menu-icon{
+    width: 35px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 5;
+    position: relative;
+    cursor: pointer;
+}
+.linha{
+    height: 4px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 80%;
+    
+    width: 20%;
+    height: 75%;
+    background-color: #5500c5;
+    opacity: 70%;
+    z-index: 2;
+    transform: scale(0);
+    transition: 0.5s;
+}
+.menu{
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    text-align: center;
+}
+.menu ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.menu ul li{
+    margin: 40px 0;
+}
+.menu a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.menu a:hover{
+    color: #aaa;
+}
+#menu:checked + .menu-icon .linha:nth-child(1){
+    transform: rotate(45deg) translate(13px, 13px);
+}
+#menu:checked + .menu-icon .linha:nth-child(2){
+    opacity: 0;
+}
+#menu:checked + .menu-icon .linha:nth-child(3){
+    transform: rotate(-45deg) translate(5px, -5px);
+}
+#menu:checked ~ .overlay{
+    transform: scale(1);
+}
+
+
+.galeria-container {
+  position: relative; /* Necessário para posicionar as setas */
+  width: 100%;
+  z-index: 1;
+}
+
+.galeria-flex {
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type:proximity;
+  height: 100px;
+}
+
+.galeria-flex img{
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+.imagem {
+    height: 30px;
+    width: 30px;
+}
+.espaço {
+
+    height: 50%;
+}
